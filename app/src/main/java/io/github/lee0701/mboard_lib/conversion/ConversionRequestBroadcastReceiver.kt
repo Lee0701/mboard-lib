@@ -7,9 +7,10 @@ import io.github.lee0701.mboard_lib.conversion.Constants.EXTRA_TEXT
 
 /**
  * Converter side, receives request from mBoard
+ * and pass it to the conversion engine
  */
 class ConversionRequestBroadcastReceiver(
-    convert: (String) -> Unit
+    val convert: (String) -> Unit
 ): BroadcastReceiver() {
     var broadcastReceived = false
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -17,5 +18,6 @@ class ConversionRequestBroadcastReceiver(
         intent ?: return
         broadcastReceived = true
         val text = intent.getStringExtra(EXTRA_TEXT) ?: return
+        convert(text)
     }
 }
