@@ -7,8 +7,11 @@
         android:name="io.github.lee0701.mboard.permission.CONVERT_TEXT" />
     <permission
         android:name="io.github.lee0701.mboard.permission.RECEIVE_CONVERTED_TEXT" />
+    <permission
+        android:name="io.github.lee0701.permission.PERMISSION_RECEIVE_CONTEXT_TEXT" />
 
     <uses-permission android:name="io.github.lee0701.mboard.permission.CONVERT_TEXT" />
     <uses-permission android:name="io.github.lee0701.mboard.permission.RECEIVE_CONVERTED_TEXT" />
+    <uses-permission android:name="io.github.lee0701.permission.PERMISSION_RECEIVE_CONTEXT_TEXT" />
 
 </manifest>
