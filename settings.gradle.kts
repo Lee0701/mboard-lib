@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "mboard-lib"
-include(":app")
+include(":lib")
