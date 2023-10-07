@@ -12,15 +12,17 @@ import io.github.lee0701.mboard_lib.conversion.Constants.PERMISSION_RECEIVE_CONT
  * mBoard side, requests conversion of a text
  * to Converter
  */
-object ConversionRequestBroadcaster {
-    fun broadcastConvertText(context: Context, text: String) {
+class ConversionRequestBroadcaster(
+    private val context: Context
+) {
+    fun broadcastConvertText(text: String) {
         val intent = Intent().apply {
             action = ACTION_CONVERT_TEXT
             putExtra(EXTRA_TEXT, text)
         }
         context.sendBroadcast(intent, PERMISSION_CONVERT_TEXT)
     }
-    fun broadcastUpdateContextText(context: Context, text: String) {
+    fun broadcastUpdateContextText(text: String) {
         val intent = Intent().apply {
             action = ACTION_UPDATE_CONTEXT_TEXT
             putExtra(EXTRA_TEXT, text)

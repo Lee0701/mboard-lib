@@ -10,8 +10,10 @@ import io.github.lee0701.mboard_lib.conversion.Constants.PERMISSION_RECEIVE_CONV
  * Converter side, broadcasts converted
  * result candidates to mBoard side
  */
-object ConversionResultBroadcaster {
-    fun broadcast(context: Context, candidates: List<List<String>>) {
+class ConversionResultBroadcaster(
+    private val context: Context
+) {
+    fun broadcast(candidates: List<List<String>>) {
         val intent = Intent().apply {
             action = ACTION_CONVERT_TEXT_RESULT
             val result = ArrayList(candidates.map { item -> item.joinToString("\t") })
