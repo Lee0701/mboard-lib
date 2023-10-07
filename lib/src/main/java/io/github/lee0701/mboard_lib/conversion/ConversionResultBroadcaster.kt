@@ -14,7 +14,7 @@ object ConversionResultBroadcaster {
     fun broadcast(context: Context, candidates: List<List<String>>) {
         val intent = Intent().apply {
             action = ACTION_CONVERT_TEXT_RESULT
-            val result = candidates.map { item -> item.joinToString("\t") }.toTypedArray()
+            val result = ArrayList(candidates.map { item -> item.joinToString("\t") })
             putExtra(EXTRA_CANDIDATES, result)
         }
         context.sendBroadcast(intent, PERMISSION_RECEIVE_CONVERTED_TEXT)
